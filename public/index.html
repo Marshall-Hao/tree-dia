@@ -1,36 +1,80 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="style.css">
-     <title>Document</title>
- </head>
- <body>
-     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Marshall Corp</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-indigo-400 text-center text-3xl font-bold font-mono text-white align-middle py-5 tracking-wider">
+    Marshall Corp
+    </nav>
+
+    <div class="bg-gray-200 py-5 text-lg tracking-wide text-gray-400 text-center relative">
+        The Best Company in the World, Maybe?
+        <a href="#modal" class="w-10 h-10 rounded-full bg-indigo-400 grid flex text-white absolute -bottom-5 right-5 opacity-90 modal-trigger">
+            <i class="material-icons justify-self-center self-center ">add</i>
+        </a>
+    </div>
+
+    <div id="modal" class="modal max-w-md">
+        <div class="modal-content flex flex-col justify-center">
+            <span class="text-indigo-400 text-center text-xl font-bold">Add New Employee</span>
+        <form>
+            <div class="input-field">
+                <input type="text" id="name" placeholder="Employee Name">
+            </div>
+            <div class="input-field">
+                <input type="text" id="parent" placeholder="Reports to...">
+            </div>
+            <div class="input-field">
+                <input type="text" id="department" placeholder="Department">
+            </div>
+            <div class="input-field grid">
+                <button class="bg-indigo-400 text-center rounded-xl py-3 px-5 text-white font-semibold text-md justify-self-center">Add Employee</button>
+            </div>
+        </form>
+        </div>
+    </div>
 
 
-    <script>
-        var firebaseConfig = {
-          apiKey: "AIzaSyC4hNdbnfR-VTdREaUVcyQ2lFEVz_i2ZtU",
-          authDomain: "d3-playground-69ea4.firebaseapp.com",
-          projectId: "d3-playground-69ea4",
-          storageBucket: "d3-playground-69ea4.appspot.com",
-          messagingSenderId: "1022860761141",
-          appId: "1:1022860761141:web:742dbe4037c60267c9f97c",
-          measurementId: "G-44D69TT9VM"
-        };
-        //Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        const settings = {timestampsInSnapshots: true};
-        db.settings(settings);
-    </script>
+<div class="canvas mt-12">
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyC4hNdbnfR-VTdREaUVcyQ2lFEVz_i2ZtU",
+        authDomain: "d3-playground-69ea4.firebaseapp.com",
+        projectId: "d3-playground-69ea4",
+        storageBucket: "d3-playground-69ea4.appspot.com",
+        messagingSenderId: "1022860761141",
+        appId: "1:1022860761141:web:742dbe4037c60267c9f97c",
+        measurementId: "G-44D69TT9VM"
+    };
+    //Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const settings = {timestampsInSnapshots: true};
+    db.settings(settings);
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="../javascript/graph.js"></script>
     <script src="../javascript/index.js"></script>
- </body>
- </html>
+</body>
+</html>
